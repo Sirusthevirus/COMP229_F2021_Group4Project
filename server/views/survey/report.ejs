@@ -42,7 +42,7 @@
                             <td class="col-4">100%</td>
                         </tr>
                     <% } else { %>
-                        <% if (survey.questions[c].responseText ?? null) { %>
+                        <% if (survey.questions[c].responseText) { %>
                             <% for (let d = 0; d < survey.questions[c].responseText.length; d++) { %>
                                 <tr class="d-flex">
                                     <td class="col-12"><%= survey.questions[c].responseText[d] %></td>
