@@ -56,7 +56,6 @@
         questionsDiv.appendChild(div);
         counter++;
         incrementQuestionCounter(1);
-        buildTypeString(0);
     }
 
     function addShortQuestion() {
@@ -111,7 +110,6 @@
         questionsDiv.appendChild(div);
         counter++;
         incrementQuestionCounter(1);
-        buildTypeString(1);
     }
 
     function deleteDiv(question) {
@@ -120,7 +118,6 @@
         questionsDiv.remove();
         counter--;
         incrementQuestionCounter(0);
-        buildTypeString(3);
     }
 
     function incrementQuestionCounter(bool) {
@@ -133,25 +130,6 @@
             value--;
         }
         document.getElementById('questionsCounter').value = value;
-    }
-
-    function buildTypeString(bool) {
-        let value = document.getElementById('questionType').value;
-        switch(bool) {
-            case 0:
-                value = value + "YN,";
-                break;
-            case 1:
-                value = value + "SHORT,";
-                break;
-            default:
-                let oldValue = value.split(",")
-                value = oldValue.slice(0, oldValue.length - 2).join(",") + ",";
-                if(value == ","){
-                    value = "";
-                }
-            }
-        document.getElementById('questionType').value = value;
     }
 
  </script>
