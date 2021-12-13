@@ -21,7 +21,10 @@ module.exports.processAddPage = (req, res, next) => {
         if(req.body["type" + i] == "YN" || req.body["type" + i] == " YN"){
             let questionObj = {
                 questionTitle: req.body["question" + i],
-                type: req.body["type" + i]
+                type: req.body["type" + i],
+                responseN: 0,
+                responseY: 0,
+                responseText: []
             };
             questionArray.push(questionObj);
         }
@@ -29,7 +32,10 @@ module.exports.processAddPage = (req, res, next) => {
         {
             let questionObj = {
                 questionTitle: req.body["question" + i],
-                type: req.body["type" + i]
+                type: req.body["type" + i],
+                responseN: 0,
+                responseY: 0,
+                responseText: []
             };
             questionArray.push(questionObj);
         }
@@ -91,19 +97,27 @@ module.exports.processEditPage = (req, res, next) => {
     let questionCounter = Number(req.body.questionCounter) + 1;
     let questionArray = [];
     for (let i = 1; i < questionCounter; i++) {
-        console.log(req.body["type" + i]);
-        if(req.body["type" + i] == "YN" || req.body["type" + i] == " YN"){
+        if(req.body["type" + i] == "YN") {
             let questionObj = {
                 questionTitle: req.body["question" + i],
-                type: req.body["type" + i]
+                type: req.body["type" + i],
+                responseN: req.body["responseN" + i],
+                responseY: req.body["responseY" + i],
+                responseText: req.body["responseText" + i]
             };
             questionArray.push(questionObj);
         }
         else
         {
+            let stringText = req.body["responseText" + i];
+            let responseArray = stringText.split(",");
+            console.log(responseArray);
             let questionObj = {
                 questionTitle: req.body["question" + i],
-                type: req.body["type" + i]
+                type: req.body["type" + i],
+                responseN: req.body["responseN" + i],
+                responseY: req.body["responseY" + i],
+                responseText: responseArray
             };
             questionArray.push(questionObj);
         }

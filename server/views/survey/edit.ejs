@@ -226,6 +226,12 @@
                                     value="<%- qArray[i].questionTitle %>" required <%- disabled %>>
                                     <input type="hidden" class="form-control" value="<%- qArray[i].type %>" 
                                     id="questionType" name="type<%= i + 1%>" placeholder="Type array">
+                                    <input type="hidden" class="form-control" value="<%- qArray[i].responseN %>" 
+                                    id="responseN" name="responseN<%= i + 1%>" placeholder="Response N">
+                                    <input type="hidden" class="form-control" value="<%- qArray[i].responseY %>" 
+                                    id="responseY" name="responseY<%= i + 1%>" placeholder="Response Y">
+                                    <input type="hidden" class="form-control" value="<%- qArray[i].responseText %>" 
+                                    id="responseText" name="responseText<%= i + 1%>" placeholder="Response Text">
                                     <% if (survey.status == "CREATED") { %>
                                     <a style="float: right;" onclick="deleteDiv(<%= i + 1 %>)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                                     <% } %>
@@ -237,6 +243,12 @@
                                      size="40" required <%- disabled %>>
                                     <input type="hidden" class="form-control" value="<%- qArray[i].type %>" 
                                     id="questionType" name="type<%= i + 1%>" placeholder="Type array">
+                                    <input type="hidden" class="form-control" value="<%- qArray[i].responseN %>" 
+                                    id="responseN" name="responseN<%= i + 1%>" placeholder="Response N">
+                                    <input type="hidden" class="form-control" value="<%- qArray[i].responseY %>" 
+                                    id="responseY" name="responseY<%= i + 1%>" placeholder="Response Y">
+                                    <input type="hidden" class="form-control" value="<%- qArray[i].responseText %>" 
+                                    id="responseText" name="responseText<%= i + 1%>" placeholder="Response Text">
                                     <% if (survey.status == "CREATED") { %>
                                         <a style="float: right;" onclick="deleteDiv(<%= i + 1%>)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                                     <% } %>
