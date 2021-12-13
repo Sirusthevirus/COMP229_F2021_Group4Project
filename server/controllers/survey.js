@@ -65,7 +65,7 @@ module.exports.processAddPage = (req, res, next) => {
         else
         {
             // refresh the contact list
-            res.redirect('/');
+            res.redirect('/my-survey');
         }
     });
 }
@@ -153,7 +153,7 @@ module.exports.processEditPage = (req, res, next) => {
          else
          {
              // refresh the contact list
-             res.redirect('/');
+             res.redirect('/my-survey');
          }
      });
 }
@@ -172,8 +172,7 @@ module.exports.performDelete = (req, res, next) => {
         }
         else
         {
-             // refresh the contact list
-             res.redirect('/');
+             res.redirect('/my-survey');
         }
     });
 }
