@@ -96,7 +96,7 @@ module.exports.processLoginPage = (req, res, next) => {
             }, token: authToken});
             */
 
-            return res.redirect('/');
+            return res.redirect('/my-survey');
         });
     })(req, res, next);
 }
@@ -157,7 +157,7 @@ module.exports.processRegisterPage = (req, res, next) => {
             */
 
             return passport.authenticate('local')(req, res, () => {
-                res.redirect('/')
+                res.redirect('/my-survey')
             });
         }
     });

@@ -23,8 +23,8 @@
                 <!-- Repeatable Template Row -->
                 <% for (let count = 0; count < SurveyList.length; count++) { %>
                     <tr class="d-flex">
-                        <td class="text-center col-7"><%= SurveyList[count].title %></td>
-                        <td class="text-center col-2"><%= SurveyList[count].status %></td>
+                        <td class="my-1 text-center col-7"><%= SurveyList[count].title %></td>
+                        <td class="my-1 text-center col-2"><%= SurveyList[count].status %></td>
                         <td class="text-center col-3">
                             <% if (SurveyList[count].status !== 'CLOSED') { %>
                                 <a href="/survey/edit/<%= SurveyList[count]._id %>" class="my-1 btn btn-primary btn-sm">
