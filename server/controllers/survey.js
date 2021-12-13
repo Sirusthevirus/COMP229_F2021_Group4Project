@@ -98,11 +98,16 @@ module.exports.processEditPage = (req, res, next) => {
     let questionArray = [];
     for (let i = 1; i < questionCounter; i++) {
         if(req.body["type" + i] == "YN") {
+            let stringText = req.body["responseText" + i];
+            let responseArray = stringText.split(",");
+            if(responseArray == ""){
+                responseArray = []
+            }
             let questionObj = {
                 questionTitle: req.body["question" + i],
                 type: req.body["type" + i],
-                responseN: req.body["responseN" + i],
-                responseY: req.body["responseY" + i],
+                responseN: Number(req.body["responseN" + i]),
+                responseY: Number(req.body["responseY" + i]),
                 responseText: req.body["responseText" + i]
             };
             questionArray.push(questionObj);
@@ -111,12 +116,14 @@ module.exports.processEditPage = (req, res, next) => {
         {
             let stringText = req.body["responseText" + i];
             let responseArray = stringText.split(",");
-            console.log(responseArray);
+            if(responseArray == ""){
+                responseArray = []
+            }
             let questionObj = {
                 questionTitle: req.body["question" + i],
                 type: req.body["type" + i],
-                responseN: req.body["responseN" + i],
-                responseY: req.body["responseY" + i],
+                responseN: Number(req.body["responseN" + i]),
+                responseY: Number(req.body["responseY" + i]),
                 responseText: responseArray
             };
             questionArray.push(questionObj);
